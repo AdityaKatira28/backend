@@ -68,6 +68,22 @@ def health_check():
         version="1.0.0"
     )
 
+@app.get("/api/test")
+def api_test():
+    """API connectivity test endpoint for frontend integration."""
+    return {
+        "message": "Backend API connection successful",
+        "status": "connected",
+        "timestamp": datetime.now().isoformat(),
+        "api_version": "1.0.0",
+        "available_endpoints": [
+            "/api/test",
+            "/api/checks", 
+            "/health",
+            "/docs"
+        ]
+    }
+
 @app.get("/api/checks", response_model=List[ComplianceCheck])
 def get_compliance_checks(
     status: Optional[str] = Query(None, description="Filter by status: Passing, Failing, Warning"),
