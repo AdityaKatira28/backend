@@ -1,0 +1,7 @@
+# Ignore Python files to force Node.js build
+*.py
+__pycache__/
+requirements.txt
+models.py
+utils.py
+main.py 
