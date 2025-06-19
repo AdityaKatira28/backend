@@ -12,15 +12,12 @@ app.use(cors({
 
 // Rest of your server code continues here...
 
-// Test route
-app.get("/api/test", (req, res) => {
-  res.json({ message: "Connected to backend!" });
-});
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
-app.use(require("./routes/test"));
+
 
 
 
